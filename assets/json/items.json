@@ -1,0 +1,22 @@
+[
+{
+  "class": "Clothing",
+  "duty": "0.2",
+  "tax": "0.15"
+},
+{
+  "class": "Vitamins & Food Supplements",
+  "duty": "0.2",
+  "tax": "0.15"
+},
+{
+  "class": "Jewellery",
+  "duty": "0.30",
+  "tax": "0.15"
+},
+{
+  "class": "Computer Parts",
+  "duty": "0",
+  "tax": "0.15"
+}
+]

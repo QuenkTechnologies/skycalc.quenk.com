@@ -1,79 +1,111 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" data-ng-app="skycalc">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Skybox-rates : A tool for making quick comparissions about local skybox services." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Skybox-rates</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Skycalc: Which one would you choose?</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {margin-top: 60px;}
+      .css-form input.ng-invalid.ng-dirty {
+        background-color: #FA787E;
+      }
+      .css-form input.ng-valid.ng-dirty {
+        background-color: #78FA89;
+      }
+    </style>
   </head>
+  <body data-ng-controller="Main">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <h1>SkyCalc</h1>
+          <p>Import shipping comparison tool.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="well">
+            <!-- Controls -->
+            <form class="form-horizontal css-form">
+              <div class="form-group">
+                <label for="itemClass" class="control-label col-sm-3">Class</label>
+                <div class="col-sm-6">
+                  <select id="itemClass" class="form-control" data-ng-change="update()" ng-model="classSelected" data-ng-options="item.class for item in items" >
+                  </select>
+                </div>  
+              </div>
+              <div class="form-group">
+                <label for="itemPrice" class="control-label col-sm-3">Price</label>
+                <div class="col-sm-2"> 
+                  <input id="itemPrice"  data-ng-change="update()" data-ng-model="classSelected.price" type="number" class="form-control" placeholder="0.00" data-ng-pattern="NUMBER_PATTERN"> 
+                </div> 
+              </div>
+              <div class="form-group">
+                <label for="itemWeight" class="control-label col-sm-3">Weight</label>
+                <div class="col-sm-2"> 
+                  <input id="itemWeight"  data-ng-change="update()" data-ng-model="classSelected.weight"  type="number" class="form-control" placeholder="kgs" data-ng-pattern="NUMBER_PATTERN"> 
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="" class="control-label col-sm-3">Dimensions(mm)</label>
+                <div class="col-sm-2"> 
+                  <input id="itemWidth"  data-ng-change="update()" data-ng-model="classSelected.width"  type="number" class="form-control" placeholder="x" data-ng-pattern="NUMBER_PATTERN"> 
+                </div>
+                <div class="col-sm-2"> 
+                  <input id="itemLength"  data-ng-change="update()" data-ng-model="classSelected.length"  type="number" class="form-control" placeholder="y" data-ng-pattern="NUMBER_PATTERN"> 
+                </div>
+                <div class="col-sm-2"> 
+                  <input id="itemHeight"   data-ng-change="update()" data-ng-model="classSelected.height"  type="number" class="form-control" placeholder="z" data-ng-pattern="NUMBER_PATTERN"> 
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div><!-- row -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="panel panel-primary">
+            <div class="panel-heading">{{classSelected.class}}</div>
+            <table class="table table-condesed table-striped">
+              <thead>
+                <tr>
+                  <td><i class="glyphicon glyphicon-plane"></i></td>
+                  <td>Duties</td>
+                  <td>Tax</td>
+                  <td>Fuel</td>
+                  <td>Charge</td>
+                  <td>Total</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="entry in table">
+                  <td>{{entry.name}}</td>
+                  <td>{{entry.duty.valueOf()}}</td>
+                  <td>{{entry.tax.valueOf()}}</td>
+                  <td>{{entry.fuel.valueOf()}}</td>
+                  <td>{{entry.fee.valueOf()}}</td>
+                  <td>{{entry.total.valueOf()}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-  <body>
+        </div>
+      </div><!-- container -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/QuenkTechnologies/skybox-rates">View on GitHub</a>
-
-          <h1 id="project_title">Skybox-rates</h1>
-          <h2 id="project_tagline">A tool for making quick comparissions about local skybox services.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/QuenkTechnologies/skybox-rates/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/QuenkTechnologies/skybox-rates/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Skybox-rates maintained by <a href="https://github.com/QuenkTechnologies">QuenkTechnologies</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+      <!-- JavaScript -->
+      <!--   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+      <!--   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+      <script src="/assets/js/index.js"></script>
+      <script src="/assets/js/services.js"></script>
+      <script src="/assets/js/directives.js"></script>
+      <script src="/assets/js/lib/big.js"></script>
+      <script src="/assets/js/lib/Vendor.js"></script>
+      <script src="/assets/js/lib/WebSource.js"></script>
+      <script src="/assets/js/controllers.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,20 @@
+skycalc.factory('XHRService', ['$http', function($http) {
+
+  var self = {};
+
+  self.Items = function(scope) {
+
+    $http.get('/assets/json/items.json').success(function (data) {
+      scope.items = data;
+    });
+  };
+
+
+  return self;
+
+
+}]);
+
+skycalc.factory('CompositeVendorService', [function () {
+
+}]);
