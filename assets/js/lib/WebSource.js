@@ -2,9 +2,9 @@
 var skycalc = skycalc || {};
 
 
-skycalc.NewWebSource = function () {
+skycalc.WebSource = function () {
 
-  var self = skycalc.Vendor({'name': 'Web Source (Personal)'});
+  var self = skycalc.Vendor({name: 'Web Source (Personal)'});
 
   return self;
 
