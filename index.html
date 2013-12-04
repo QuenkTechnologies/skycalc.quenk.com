@@ -40,25 +40,25 @@
               <div class="form-group">
                 <label for="itemPrice" class="control-label col-sm-3">Price</label>
                 <div class="col-sm-2"> 
-                  <input id="itemPrice"  data-ng-change="update()" data-ng-model="classSelected.price" type="number" class="form-control" placeholder="0.00" data-ng-pattern="NUMBER_PATTERN"> 
+                  <input id="itemPrice"  data-ng-change="update()" data-ng-model="classSelected.price" type="number" class="form-control" placeholder="0.00" data-ng-pattern="MONEY_PATTERN"> 
                 </div> 
               </div>
               <div class="form-group">
                 <label for="itemWeight" class="control-label col-sm-3">Weight</label>
                 <div class="col-sm-2"> 
-                  <input id="itemWeight"  data-ng-change="update()" data-ng-model="classSelected.weight"  type="number" class="form-control" placeholder="kgs" data-ng-pattern="NUMBER_PATTERN"> 
+                  <input id="itemWeight"  data-ng-change="update()" data-ng-model="classSelected.weight"  type="number" class="form-control" placeholder="lbs" data-ng-pattern="METRIC_PATTERN"> 
                 </div>
               </div>
               <div class="form-group">
                 <label for="" class="control-label col-sm-3">Dimensions(mm)</label>
                 <div class="col-sm-2"> 
-                  <input id="itemWidth"  data-ng-change="update()" data-ng-model="classSelected.width"  type="number" class="form-control" placeholder="x" data-ng-pattern="NUMBER_PATTERN"> 
+                  <input id="itemWidth"  data-ng-change="update()" data-ng-model="classSelected.width"  type="number" class="form-control" placeholder="x" data-ng-pattern="METRIC_PATTERN"> 
                 </div>
                 <div class="col-sm-2"> 
-                  <input id="itemLength"  data-ng-change="update()" data-ng-model="classSelected.length"  type="number" class="form-control" placeholder="y" data-ng-pattern="NUMBER_PATTERN"> 
+                  <input id="itemLength"  data-ng-change="update()" data-ng-model="classSelected.length"  type="number" class="form-control" placeholder="y" data-ng-pattern="METRIC_PATTERN"> 
                 </div>
                 <div class="col-sm-2"> 
-                  <input id="itemHeight"   data-ng-change="update()" data-ng-model="classSelected.height"  type="number" class="form-control" placeholder="z" data-ng-pattern="NUMBER_PATTERN"> 
+                  <input id="itemHeight"   data-ng-change="update()" data-ng-model="classSelected.height"  type="number" class="form-control" placeholder="z" data-ng-pattern="METRIC_PATTERN"> 
                 </div>
               </div>
             </form>
@@ -76,8 +76,8 @@
                   <td>Duties</td>
                   <td>Tax</td>
                   <td>Fuel</td>
-                  <td>Charge</td>
-                  <td>Total</td>
+                  <td>Fee</td>
+                  <td>Total Charges</td>
                 </tr>
               </thead>
               <tbody>
@@ -109,8 +109,12 @@
 
       <!-- Services -->
       <script src="/assets/js/services/shared/NumParser.js"></script>
+      <script src="/assets/js/services/charges/FlatRate.js"></script>
+      <script src="/assets/js/services/charges/RateProvider.js"></script>
       <script src="/assets/js/services/charges/Range.js"></script>
       <script src="/assets/js/services/shared/FieldProvider.js"></script>
+      <script src="/assets/js/services/charges/ChargeProvider.js"></script>
+      <script src="/assets/js/services/charges/Processor.js"></script>
 
       <!--Vendor scripts -->
       <script src="/assets/js/lib/WebSource.js"></script>
