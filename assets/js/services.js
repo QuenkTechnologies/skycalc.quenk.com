@@ -19,7 +19,9 @@ skycalc.factory('VendorService', [function () {
 
   var self = [];
 
-  self.push(skycalc.NewWebSource());
+  self.push(skycalc.WebSource());
+  self.push(skycalc.Lpkpak());
+  self.push(skycalc.CaribbeanExpress());
 
 
   return self;
