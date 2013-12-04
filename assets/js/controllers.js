@@ -1,36 +1,37 @@
 
-skycalc.controller('Main', ['$scope', 'XHRService', 'VendorService', 'BigService',  function (scope, $xhr, $ve, $big) {
+skycalc.controller('Main', ['$scope', 'XHRService','FieldProvider', 'Processor', function (scope, $xhr,newFieldProvider, newProcessor) {
 
   scope.table = [];
 
-  scope.NUMBER_PATTERN = /^\d+(\.\d{0,2})?$/;
+  scope.MONEY_PATTERN = /^\d+(\.\d{0,2})?$/;
+  scope.METRIC_PATTERN = /^\d+(\.\d{0,2})?$/;
 
   $xhr.Items(scope);
 
+
   scope.update = function () {
 
-    scope.table = [];
+  var fieldProvider = newFieldProvider(scope.classSelected);
 
-    var s = scope.classSelected;
-    angular.forEach($ve, function (o, key) {
-      o.setPrice($big.mustHaveValue(s.price)).
-      calculateDutyCharge($big.charge(s.duty, s.price)).
-      calculateTaxCharge($big.charge(s.tax, s.price)).
-      calculateWeightCharge($big.mustHaveValue(s.weight)).
-      calculateDimensionCharge
-      ($big.mustHaveValue(s.width),$big.mustHaveValue(s.length), $big.mustHaveValue(s.height)).
-      calculateFuel(s).
-      calculateFee(s).
-      publish(scope.table);
+  $xhr.Vendors(function (vendor) {
+
+    var $processor = newProcessor(vendor.meta, fieldProvider);
+
+    angular.forEach(vendor.chargeMeta, function (charge) {
+ 
+      $processor.applyCharge(charge.type, charge, fieldProvider);
+
 
     });
+
+    $processor.finish(scope.table);
+
+  });
+  scope.table = [];
 
 
 
   };
-
-
-
 
 
 }]);

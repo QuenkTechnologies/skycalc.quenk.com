@@ -1,0 +1,68 @@
+[
+
+{
+  "meta": {
+  "name": "WebSource (Personal)"
+  },
+  "chargeMeta": [
+
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":0.0,
+    "high": 0.5,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"4.12"}
+  },
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":0.51,
+    "high": 1.0,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"4.87"}
+  },
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":1.01,
+    "high": 2.0,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"8.49"}
+  },
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":2.01,
+    "high": 3.0,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"10.86"}
+  },
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":3.01,
+    "high": 4.0,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"13.48"}
+  },
+  {
+    "type": "Range",
+    "levy":"weight",
+    "affinity": "fee",
+    "low":4.01,
+    "high": 0.0,    
+    "rate":{"type":"FlatRate", "currency":"USD", "value":"16.60"}
+  }
+  
+
+
+
+
+
+  ]
+
+}
+
+
+]

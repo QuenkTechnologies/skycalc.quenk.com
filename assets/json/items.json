@@ -16,7 +16,7 @@
 },
 {
   "class": "Computer Parts",
-  "duty": "0",
+  "duty": "0.0",
   "tax": "0.15"
 }
 ]

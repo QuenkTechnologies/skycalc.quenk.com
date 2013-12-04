@@ -9,6 +9,17 @@ skycalc.factory('XHRService', ['$http', function($http) {
     });
   };
 
+  self.Vendors = function (f) {
+
+    $http.get('/assets/json/vendors.json', {cache:true}).success(function (data) {
+
+      angular.forEach(data, f);
+
+    });
+
+
+  };
+
 
   return self;
 
@@ -19,7 +30,9 @@ skycalc.factory('VendorService', [function () {
 
   var self = [];
 
-  self.push(skycalc.NewWebSource());
+  self.push(skycalc.WebSource());
+  self.push(skycalc.Lpkpak());
+  self.push(skycalc.CaribbeanExpress());
 
 
   return self;
