@@ -9,6 +9,17 @@ skycalc.factory('XHRService', ['$http', function($http) {
     });
   };
 
+  self.Vendors = function (f) {
+
+    $http.get('/assets/json/vendors.json').success(function (data) {
+
+      angular.foreach(data, f);
+
+    });
+
+
+  };
+
 
   return self;
 
