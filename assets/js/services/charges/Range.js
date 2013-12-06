@@ -5,11 +5,11 @@
  */
 skycalc.factory('Range', ['$rateProvider', function (rateProvider){
 
-  return function (chargeMeta, fieldProvider, processor) {
+  return function (chargeMeta, fieldProvider) {
 
     var self = {};
 
-    self.calculate = function () {
+    self.apply = function (schedule) {
 
       var value = fieldProvider.provide(chargeMeta.levy);
 
@@ -17,7 +17,7 @@ skycalc.factory('Range', ['$rateProvider', function (rateProvider){
 
         if(chargeMeta.high === 0.0) {
 
-          processor.include(
+          schedule.include(
             chargeMeta.affinity, 
             rateProvider.
             provide(chargeMeta.rate)
@@ -29,7 +29,7 @@ skycalc.factory('Range', ['$rateProvider', function (rateProvider){
 
           var rate = rateProvider.provide(chargeMeta.rate);
 
-          processor.include(chargeMeta.affinity, rate.convert(value));
+          schedule.include(chargeMeta.affinity, rate.convert(value));
 
 
         }

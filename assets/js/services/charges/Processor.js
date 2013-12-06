@@ -2,7 +2,7 @@
 /**
  * Aggregates the various charge for ONE vendor.
  */
-skycalc.factory('Processor', ['$numParser', '$chargeProvider', function ($parser, $provider) {
+skycalc.factory('Processor', ['$numParser', '$chargeProvider', 'Schedule',  function ($parser, $provider, newSchedule) {
 
 
   /**
@@ -13,7 +13,9 @@ skycalc.factory('Processor', ['$numParser', '$chargeProvider', function ($parser
   return function (vendor, fieldProvider) {
 
     var self = {};
-    var schedule = vendor;
+    var schedule = newSchedule(vendor);
+
+
 
     /**
      *  
@@ -27,14 +29,12 @@ skycalc.factory('Processor', ['$numParser', '$chargeProvider', function ($parser
 
       schedule[affinity] = value.plus($parser.mustParse(schedule[affinity], 0));
 
+
     };
 
     self.applyCharge = function (type, chargeMeta) {
 
-      $provider.createCharge(type, chargeMeta, fieldProvider, self).calculate();
-      //^for calculations that depend on previous computations, we may inject a memo pattern into the 
-      //calculate method.
-
+      $provider.createCharge(type, chargeMeta, fieldProvider).apply(schedule);
 
     };
 
@@ -46,9 +46,11 @@ skycalc.factory('Processor', ['$numParser', '$chargeProvider', function ($parser
      */
     self.finish = function (table) {
 
+
       var price = fieldProvider.provide('price');
       schedule.duty = fieldProvider.provide('duty').times(price);
       schedule.tax = fieldProvider.provide('tax').times(price);
+      schedule.finished();
 
       schedule.total = schedule.tax.plus(schedule.duty).plus(schedule.fee);
       
