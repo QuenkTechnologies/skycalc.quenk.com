@@ -53,8 +53,15 @@
     "low":4.01,
     "high": 0.0,    
     "rate":{"type":"FlatRate", "currency":"USD", "value":"16.60"}
+  },
+  {
+    "type": "Aggregate",
+    "levy":"fee",
+    "affinity": "fuel",
+    "rate":{"type":"Percentage", "currency":"USD", "value":"0.17"}
   }
-  
+
+
 
 
 
