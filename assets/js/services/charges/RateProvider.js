@@ -1,5 +1,5 @@
 
-skycalc.factory('$rateProvider', ['FlatRate', function (newFlatRate) {
+skycalc.factory('$rateProvider', ['FlatRate', 'PercentRate', function (newFlatRate, newPercentRate) {
 
   return {
 
@@ -13,6 +13,7 @@ skycalc.factory('$rateProvider', ['FlatRate', function (newFlatRate) {
       //Start the mayhem here :/
 
       if(obj.type == 'FlatRate') { return newFlatRate(obj); }
+      if(obj.type == 'PercentRate') { return newPercentRate(obj); }
 
     }
 
