@@ -18,5 +18,61 @@
   "class": "Computer Parts",
   "duty": "0.0",
   "tax": "0.15"
+},
+{
+  "class": "Computer Systen",
+  "duty": "0.00",
+  "tax": "0.00"
+
+},
+{
+  "class": "Toys",
+  "duty": "0.20",
+  "tax": "0.15"
+
+
+},
+{
+  "class": "Furniture & Appliances",
+  "duty": "0.20",
+  "tax": "0.15"
+
+},
+{
+  "class": "Cosmetics",
+  "duty": "0.20",
+  "tax": "0.15"
+
+},
+{
+  "class": "Video Games",
+  "duty": "0.20",
+  "tax": "0.15"
+
+},
+{
+  "class": "Printers",
+  "duty": "0.0",
+  "tax": "0.0"
+
+},
+{
+  "class": "Music CD",
+  "duty": "0.00",
+  "tax": "0.15"
+
+},
+{
+  "class": "Cell Phones and Accessories",
+  "duty": "0.20",
+  "tax": "0.15"
+
+},
+{
+  "class": "Laptops",
+  "duty": "0.00",
+  "tax": "0.00"
+
 }
+
 ]
