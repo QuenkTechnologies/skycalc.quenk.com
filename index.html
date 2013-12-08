@@ -33,7 +33,7 @@
               <div class="form-group">
                 <label for="itemClass" class="control-label col-sm-3">Class</label>
                 <div class="col-sm-6">
-                  <select id="itemClass" class="form-control" data-ng-change="update()" ng-model="classSelected" data-ng-options="item.class for item in items" >
+                  <select id="itemClass" class="form-control" data-ng-change="update()" ng-model="classSelected" data-ng-options="item.class for item in items | orderBy: 'class' " >
                   </select>
                 </div>  
               </div>
@@ -81,7 +81,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr data-ng-repeat="entry in table">
+                <tr data-ng-repeat="entry in table | orderBy:'name'">
                   <td>{{entry.name}}</td>
                   <td>{{entry.duty.valueOf()}}</td>
                   <td>{{entry.tax.valueOf()}}</td>
@@ -108,6 +108,7 @@
       <script src="/assets/js/lib/Vendor.js"></script>
 
       <!-- Services -->
+      <script src="/assets/js/services/shared/Num.js"></script>
       <script src="/assets/js/services/shared/NumParser.js"></script>
       <script src="/assets/js/services/charges/FlatRate.js"></script>
       <script src="/assets/js/services/charges/PercentRate.js"></script>

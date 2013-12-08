@@ -1,75 +1,127 @@
 [
 
-{
-  "meta": {
-  "name": "WebSource (Personal)"
-  },
-  "chargeMeta": [
+  {
+    "meta": {
+      "name": "WebSource (Personal)"
+    },
+    "chargeMeta": [
 
-  {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":0.0,
-    "high": 0.5,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"4.12"}
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":0.0,
+        "high": 0.5,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"4.12"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":0.51,
+        "high": 1.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"4.87"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":1.01,
+        "high": 2.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"8.49"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":2.01,
+        "high": 3.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"10.86"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":3.01,
+        "high": 4.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"13.48"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":4.01,
+        "high": 0.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"16.60"}
+      },
+      {
+        "type": "Aggregate",
+        "levy":"fee",
+        "affinity": "fuel",
+        "rate":{"type":"PercentRate", "currency":"USD", "value":"0.17"}
+      }
+
+    ]
+
   },
   {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":0.51,
-    "high": 1.0,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"4.87"}
-  },
-  {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":1.01,
-    "high": 2.0,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"8.49"}
-  },
-  {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":2.01,
-    "high": 3.0,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"10.86"}
-  },
-  {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":3.01,
-    "high": 4.0,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"13.48"}
-  },
-  {
-    "type": "Range",
-    "levy":"weight",
-    "affinity": "fee",
-    "low":4.01,
-    "high": 0.0,    
-    "rate":{"type":"FlatRate", "currency":"USD", "value":"16.60"}
-  },
-  {
-    "type": "Aggregate",
-    "levy":"fee",
-    "affinity": "fuel",
-    "rate":{"type":"Percentage", "currency":"USD", "value":"0.17"}
+    "meta": {
+      "name": "Trinebox"
+    },
+    "chargeMeta": [
+
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":0.0,
+        "high": 1.00,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"4.69"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":1.01,
+        "high": 25.00,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"3.24"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":25.01,
+        "high": 50.00,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"2.81"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":50.01,
+        "high": 100.00,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"2.50"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":100.01,
+        "high": 0.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"2.22"}
+      },
+      {
+        "type": "Range",
+        "levy": "weight",
+        "affinity": "fuel",
+        "low": 0.00,
+        "high": 0.00,
+        "rate":{"type":"PercentRate", "currency":"USD", "value":"0.25"}
+      }
+
+    ]
+
   }
 
 
-
-
-
-
-
-  ]
-
-}
-
-
-]
+    ]

@@ -10,7 +10,7 @@ skycalc.factory('Range', ['$rateProvider', function (rateProvider){
     var self = {};
 
     self.apply = function (schedule) {
-
+console.log(chargeMeta);
       var value = fieldProvider.provide(chargeMeta.levy);
 
       if(value.gte(chargeMeta.low)){

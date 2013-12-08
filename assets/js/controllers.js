@@ -14,9 +14,9 @@ skycalc.controller('Main', ['$scope', 'XHRService','FieldProvider', 'Processor',
   var fieldProvider = newFieldProvider(scope.classSelected);
 
   $xhr.Vendors(function (vendor) {
-
+ 
     var $processor = newProcessor(vendor.meta, fieldProvider);
-
+ 
     angular.forEach(vendor.chargeMeta, function (charge) {
  
       $processor.applyCharge(charge.type, charge, fieldProvider);
