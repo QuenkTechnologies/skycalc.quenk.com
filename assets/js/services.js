@@ -11,7 +11,7 @@ skycalc.factory('XHRService', ['$http', function($http) {
 
   self.Vendors = function (f) {
 
-    $http.get('/assets/json/vendors.json', {cache:true}).success(function (data) {
+    $http.get('/assets/json/vendors.json', {cache:false}).success(function (data) {
 
       angular.forEach(data, f);
 
