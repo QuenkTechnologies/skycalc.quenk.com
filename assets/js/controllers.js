@@ -3,8 +3,8 @@ skycalc.controller('Main', ['$scope', 'XHRService','FieldProvider', 'Processor',
 
   scope.table = [];
 
-  scope.MONEY_PATTERN = /^\d+(\.\d{0,2})?$/;
-  scope.METRIC_PATTERN = /^\d+(\.\d{0,2})?$/;
+  scope.MONEY_PATTERN = /^\d*(\.\d{0,2})?$/;
+  scope.METRIC_PATTERN = /^\d*(\.\d{0,5})?$/;
 
   $xhr.Items(scope);
 
