@@ -51,14 +51,94 @@
         "levy":"weight",
         "affinity": "fee",
         "low":4.01,
-        "high": 0.0,    
+        "high": 5.0,    
         "rate":{"type":"FlatRate", "currency":"USD", "value":"16.60"}
       },
       {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":5.01,
+        "high": 6.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"19.72"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":6.01,
+        "high": 7.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"22.84"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":7.01,
+        "high": 8.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"25.96"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":8.01,
+        "high": 9.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"29.08"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":9.01,
+        "high": 10.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"32.20"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":10.01,
+        "high": 11.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"35.32"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":11.01,
+        "high": 12.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"38.44"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":12.01,
+        "high": 13.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"41.56"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":13.01,
+        "high": 14.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"44.68"}
+      },
+      {
+        "type": "Range",
+        "levy":"weight",
+        "affinity": "fee",
+        "low":14.01,
+        "high": 15.0,    
+        "rate":{"type":"FlatRate", "currency":"USD", "value":"47.80"}
+      },
+      {
         "type": "Aggregate",
-        "levy":"fee",
-        "affinity": "fuel",
-        "rate":{"type":"PercentRate", "currency":"USD", "value":"0.17"}
+        "levy":"weight",
+        "affinity": "fee",
+        "rate":{"type":"PercentRate", "currency":"USD", "value":"3.12"}
       }
 
     ]
