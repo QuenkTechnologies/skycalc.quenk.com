@@ -11,7 +11,6 @@ skycalc.factory('FlatRate', [function () {
      * @param {Big} value
      */
     self.convert = function (value) {
-
       return Big(rateMeta.value);
 
 

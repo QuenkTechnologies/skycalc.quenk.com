@@ -12,6 +12,9 @@ skycalc.factory('PercentRate', [function() {
       console.log('Rate was: '+rateMeta.value);
       console.log('Value was: '+value);
       console.log(rateMeta.coo);
+      console.log(">>>>>>>>><<<<<<<<<<")
+  console.log(rateMeta);
+  console.log(value);
       return value.times(rateMeta.value);
 
     };
