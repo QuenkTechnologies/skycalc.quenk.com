@@ -20,6 +20,8 @@ skycalc.controller('Main', ['$scope', 'XHRService','FieldProvider', 'Processor',
     angular.forEach(vendor.chargeMeta, function (charge) {
  
       $processor.applyCharge(charge.type, charge, fieldProvider);
+      console.log("Processing->");
+      console.log(charge);
 
 
     });
